@@ -189,7 +189,7 @@ export default function About() {
                 <div style={{ marginTop: '1.2em' }}>
                   <div className="btn btn-normal btn-dark">
                     <a
-                      href="/assets/Sayeed%20Mahdi%20Mousavi%20CV.pdf"
+                      href="/assets/SayeedMahdiMousaviCV.pdf"
                       download="Sayeed Mahdi Mousavi CV.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
