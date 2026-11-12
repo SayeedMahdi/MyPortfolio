@@ -128,30 +128,97 @@ export default function About() {
             </div>
             <div className="flex-col">
               <div className="awwwards-badge"></div>
-              <h2>Education &amp;<br />Background</h2>
+              <h2>Education &amp;<br />Experience</h2>
               <p>I am Sayeed Mahdi Mousavi, a Project Manager and Full Stack Developer based in Herat, Afghanistan, with strong experience in backend development and delivering scalable digital products.</p>
               <div className="about-credentials">
                 <div className="credential-item">
-                  <h5>Degree</h5>
-                  <h4>B.Tech in Computer Science</h4>
-                  <p>Global Group of Institutes, Amritsar (2023 — 2027)</p>
+                  <h5>Education</h5>
+                  <h4>Bachelor of Science in Software Engineering</h4>
+                  <p>Herat University · Graduated</p>
+                  <p style={{ fontSize: '0.88em', opacity: 0.8, marginTop: '0.2em' }}>
+                    Achieved top university ranking among all peers with an average score exceeding 91%.
+                  </p>
                 </div>
+
                 <div className="credential-item">
-                  <h5>Foundation</h5>
-                  <h4>Intermediate, PCM</h4>
-                  <p>Gopeshwar College, Hathua (2021 — 2023)</p>
+                  <h5>Experience</h5>
+                  <h4>Project Manager &amp; Backend Engineer</h4>
+                  <p>Microcis (Aug 2023 — Dec 2024)</p>
+                  <p style={{ fontSize: '0.88em', opacity: 0.8, marginTop: '0.2em' }}>
+                    Managed timelines, technical specifications, and Agile workflows; engineered specialized Node.js backend services supporting real-time streaming and designed GraphQL API interfaces.
+                  </p>
                 </div>
+
                 <div className="credential-item">
-                  <h5>Core Competencies</h5>
+                  <h5>Experience</h5>
+                  <h4>Co-Founder, Project Manager &amp; Lead Full-Stack Developer</h4>
+                  <p>MarsCoders (Jan 2024 — Present)</p>
+                  <p style={{ fontSize: '0.88em', opacity: 0.8, marginTop: '0.2em' }}>
+                    Managing product lifecycles, sprint planning, client relations, and engineering full-stack microservices with Next.js, NestJS, TypeScript, and GraphQL.
+                  </p>
+                </div>
+
+                <div className="credential-item">
+                  <h5>Experience</h5>
+                  <h4>Lead Developer &amp; Backend Engineer (Remote)</h4>
+                  <p>Learn in Box (Jun 2023 — Present)</p>
+                  <p style={{ fontSize: '0.88em', opacity: 0.8, marginTop: '0.2em' }}>
+                    Directing backend development, scalable APIs, and database schemas using Node.js and NestJS.
+                  </p>
+                </div>
+
+                <div className="credential-item">
+                  <h5>Technical Stack</h5>
                   <div className="credential-tags">
                     <span>Project Management</span>
-                    <span>Backend Development</span>
-                    <span>Full Stack</span>
-                    <span>API Design</span>
-                    <span>Database Systems</span>
+                    <span>Agile / Scrum</span>
+                    <span>Next.js</span>
+                    <span>NestJS</span>
+                    <span>React &amp; React Native</span>
+                    <span>TypeScript</span>
                     <span>Node.js</span>
-                    <span>React</span>
-                    <span>System Architecture</span>
+                    <span>GraphQL</span>
+                    <span>REST APIs</span>
+                    <span>Media Streaming</span>
+                    <span>PostgreSQL</span>
+                    <span>MongoDB</span>
+                    <span>Supabase</span>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '1.2em' }}>
+                  <div className="btn btn-normal btn-dark">
+                    <a
+                      href="/assets/Sayeed%20Mahdi%20Mousavi%20CV.pdf"
+                      download="Sayeed Mahdi Mousavi CV.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-click magnetic"
+                      data-strength="25"
+                      data-strength-text="15"
+                    >
+                      <div className="btn-fill"></div>
+                      <span className="btn-text">
+                        <span className="btn-text-inner change">
+                          Download Full CV (PDF)
+                          <svg
+                            width="14px"
+                            height="14px"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            style={{ marginLeft: '8px', verticalAlign: 'middle', display: 'inline-block' }}
+                          >
+                            <path
+                              d="M7 1v8.5M7 9.5l-3.5-3.5M7 9.5l3.5-3.5M1.5 12.5h11"
+                              stroke="currentColor"
+                              strokeWidth="1.6"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </a>
                   </div>
                 </div>
               </div>

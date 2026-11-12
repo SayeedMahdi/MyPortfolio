@@ -128,6 +128,19 @@ export default function DrawerMenu({ onClose }) {
                     </span>
                   </a>
                 </li>
+                <li className="btn btn-link btn-link-external">
+                  <a
+                    href="/assets/Sayeed%20Mahdi%20Mousavi%20CV.pdf"
+                    download="Sayeed Mahdi Mousavi CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-click magnetic"
+                  >
+                    <span className="btn-text">
+                      <span className="btn-text-inner">CV (PDF)</span>
+                    </span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
