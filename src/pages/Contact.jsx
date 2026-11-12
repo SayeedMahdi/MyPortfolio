@@ -47,7 +47,17 @@ export default function Contact() {
       const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        throw new Error(data.error || "Failed to send message. Please try again.");
+        let errorText = "Failed to send message. Please try again.";
+        if (typeof data?.error === "string") {
+          errorText = data.error;
+        } else if (data?.error?.message) {
+          errorText = data.error.message;
+        } else if (data?.message) {
+          errorText = data.message;
+        } else if (data?.error?.response) {
+          errorText = data.error.response;
+        }
+        throw new Error(errorText);
       }
 
       setStatus("success");
@@ -60,10 +70,13 @@ export default function Contact() {
     } catch (err) {
       console.error("Submission error:", err);
       setStatus("error");
-      setFeedback(
-        err.message ||
-          "An error occurred while sending your message. Please email directly at sayeedmahdimousavi789@gmail.com.",
-      );
+      let message = "An error occurred while sending your message. Please email directly at sayeedmahdimousavi789@gmail.com.";
+      if (err instanceof Error && err.message && err.message !== "[object Object]") {
+        message = err.message;
+      } else if (typeof err === "string") {
+        message = err;
+      }
+      setFeedback(message);
       setTimeout(() => {
         setStatus("idle");
       }, 7000);

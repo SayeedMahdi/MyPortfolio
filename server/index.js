@@ -62,11 +62,16 @@ app.post('/api/contact', async (req, res) => {
     return res.status(200).json({ success: true });
   } catch (error) {
     console.error('Contact submission failed:', error);
+    let errorMessage = 'Failed to send the email. Please try again.';
+    if (error instanceof Error && error.message) {
+      errorMessage = error.message;
+    } else if (typeof error === 'object' && error !== null) {
+      errorMessage = error.message || error.response || JSON.stringify(error);
+    } else if (typeof error === 'string') {
+      errorMessage = error;
+    }
     return res.status(500).json({
-      error:
-        error instanceof Error
-          ? error.message
-          : 'Failed to send the email. Please try again.',
+      error: errorMessage,
     });
   }
 });
