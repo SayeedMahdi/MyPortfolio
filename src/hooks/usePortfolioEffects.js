@@ -1,60 +1,65 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export function usePortfolioEffects() {
   const location = useLocation();
 
   useEffect(() => {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     const cleanups = [];
 
     // Scroll to top on route change
     window.scrollTo(0, 0);
 
     // 0. Toggle .scrolled on <main>
-    const mainEl = document.querySelector('main');
+    const mainEl = document.querySelector("main");
     const updateScrolled = () => {
       if (mainEl) {
-        mainEl.classList.toggle('scrolled', window.scrollY > 60);
+        mainEl.classList.toggle("scrolled", window.scrollY > 60);
       }
     };
-    window.addEventListener('scroll', updateScrolled, { passive: true });
+    window.addEventListener("scroll", updateScrolled, { passive: true });
     updateScrolled();
-    cleanups.push(() => window.removeEventListener('scroll', updateScrolled));
+    cleanups.push(() => window.removeEventListener("scroll", updateScrolled));
 
     // 1. Reveal on scroll (IntersectionObserver)
-    const targets = document.querySelectorAll('.reveal, .span-lines, .once-in');
-    const spanLines = document.querySelectorAll('.span-lines');
+    const targets = document.querySelectorAll(".reveal, .span-lines, .once-in");
+    const spanLines = document.querySelectorAll(".span-lines");
 
     spanLines.forEach((group) => {
-      group.querySelectorAll('.span-line-inner').forEach((span, i) => {
-        span.style.transitionDelay = (i * 0.12) + 's';
+      group.querySelectorAll(".span-line-inner").forEach((span, i) => {
+        span.style.transitionDelay = i * 0.12 + "s";
       });
     });
 
     let io = null;
-    if ('IntersectionObserver' in window) {
+    if ("IntersectionObserver" in window) {
       io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             const el = entry.target;
             if (entry.isIntersecting) {
-              el.classList.add('in-view');
-              if (!el.classList.contains('span-lines')) {
+              el.classList.add("in-view");
+              if (!el.classList.contains("span-lines")) {
                 io.unobserve(el);
               }
             } else {
-              if (el.classList.contains('span-lines') && entry.boundingClientRect.top > 0) {
-                el.classList.remove('in-view');
+              if (
+                el.classList.contains("span-lines") &&
+                entry.boundingClientRect.top > 0
+              ) {
+                el.classList.remove("in-view");
               }
             }
           });
         },
-        { threshold: [0, 0.1], rootMargin: '0px 0px -5% 0px' }
+        { threshold: [0, 0.1], rootMargin: "0px 0px -5% 0px" },
       );
       targets.forEach((el) => io.observe(el));
     } else {
-      targets.forEach((el) => el.classList.add('in-view'));
+      targets.forEach((el) => el.classList.add("in-view"));
     }
 
     // Immediately trigger any in-view elements on the page
@@ -62,25 +67,29 @@ export function usePortfolioEffects() {
       targets.forEach((el) => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
-          el.classList.add('in-view');
+          el.classList.add("in-view");
         }
       });
     }, 150);
 
     // 2. Dubai GST local time
-    const timeSpan = document.getElementById('timeSpan');
+    const timeSpan = document.getElementById("timeSpan");
     let timerInterval = null;
     if (timeSpan) {
       const updateTime = () => {
         try {
-          timeSpan.textContent = new Intl.DateTimeFormat('en-GB', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true,
-            timeZone: 'Asia/Dubai'
-          }).format(new Date()).toLowerCase() + ' GST';
+          timeSpan.textContent =
+            new Intl.DateTimeFormat("en-GB", {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: true,
+              timeZone: "Asia/Kabul",
+            })
+              .format(new Date())
+              .toLowerCase() + " Kabul Time";
         } catch (e) {
-          timeSpan.textContent = new Date().toLocaleTimeString() + ' GST';
+          timeSpan.textContent =
+            new Date().toLocaleTimeString() + " Kabul Time";
         }
       };
       updateTime();
@@ -92,9 +101,11 @@ export function usePortfolioEffects() {
 
     // 3. Magnetic Buttons with 3D Text Parallax
     if (!reduceMotion) {
-      const buttons = document.querySelectorAll('.btn-click.magnetic, .btn-click');
+      const buttons = document.querySelectorAll(
+        ".btn-click.magnetic, .btn-click",
+      );
       buttons.forEach((btn) => {
-        const text = btn.querySelector('.btn-text');
+        const text = btn.querySelector(".btn-text");
         let frame = null;
 
         let shiftX = 0;
@@ -111,8 +122,9 @@ export function usePortfolioEffects() {
         let targetScale = 1;
         let isHovered = false;
 
-        const str = parseFloat(btn.getAttribute('data-strength')) || 40;
-        const strText = parseFloat(btn.getAttribute('data-strength-text')) || 20;
+        const str = parseFloat(btn.getAttribute("data-strength")) || 40;
+        const strText =
+          parseFloat(btn.getAttribute("data-strength-text")) || 20;
 
         const tick = () => {
           shiftX += (targetShiftX - shiftX) * 0.22;
@@ -137,8 +149,8 @@ export function usePortfolioEffects() {
           ) {
             frame = requestAnimationFrame(tick);
           } else {
-            btn.style.transform = '';
-            if (text) text.style.transform = '';
+            btn.style.transform = "";
+            if (text) text.style.transform = "";
             frame = null;
           }
         };
@@ -150,7 +162,7 @@ export function usePortfolioEffects() {
         const onMouseEnter = () => {
           isHovered = true;
           targetScale = 1.04;
-          if (btn.closest('.btn-left-top')) {
+          if (btn.closest(".btn-left-top")) {
             targetRotate = -2.5;
             targetShiftX = 2;
             targetShiftY = 0;
@@ -187,21 +199,21 @@ export function usePortfolioEffects() {
           start();
         };
 
-        btn.addEventListener('mouseenter', onMouseEnter);
-        btn.addEventListener('mousemove', onMouseMove);
-        btn.addEventListener('mouseleave', onMouseLeave);
+        btn.addEventListener("mouseenter", onMouseEnter);
+        btn.addEventListener("mousemove", onMouseMove);
+        btn.addEventListener("mouseleave", onMouseLeave);
 
         cleanups.push(() => {
-          btn.removeEventListener('mouseenter', onMouseEnter);
-          btn.removeEventListener('mousemove', onMouseMove);
-          btn.removeEventListener('mouseleave', onMouseLeave);
+          btn.removeEventListener("mouseenter", onMouseEnter);
+          btn.removeEventListener("mousemove", onMouseMove);
+          btn.removeEventListener("mouseleave", onMouseLeave);
           if (frame) cancelAnimationFrame(frame);
         });
       });
     }
 
     // 4. Hero Name Marquee (continuous, reverses & boosts with scroll)
-    const nameEl = document.querySelector('.home-header .big-name .name-h1');
+    const nameEl = document.querySelector(".home-header .big-name .name-h1");
     if (nameEl) {
       let position = 0;
       let direction = -1;
@@ -216,7 +228,7 @@ export function usePortfolioEffects() {
         speed = half > 0 ? half / 26000 : 1;
       };
       measure();
-      window.addEventListener('resize', measure);
+      window.addEventListener("resize", measure);
 
       const onScrollMarquee = () => {
         const y = window.scrollY;
@@ -231,7 +243,7 @@ export function usePortfolioEffects() {
         }
         lastScrollY = y;
       };
-      window.addEventListener('scroll', onScrollMarquee, { passive: true });
+      window.addEventListener("scroll", onScrollMarquee, { passive: true });
 
       const tickMarquee = (now) => {
         const dt = Math.min(now - lastTime, 48);
@@ -251,19 +263,21 @@ export function usePortfolioEffects() {
       marqueeRaf = requestAnimationFrame(tickMarquee);
 
       cleanups.push(() => {
-        window.removeEventListener('resize', measure);
-        window.removeEventListener('scroll', onScrollMarquee);
+        window.removeEventListener("resize", measure);
+        window.removeEventListener("scroll", onScrollMarquee);
         if (marqueeRaf) cancelAnimationFrame(marqueeRaf);
       });
     }
 
     // 5. Floating Hover Project Preview on Desktop
     if (!reduceMotion && window.innerWidth > 1024) {
-      const imageContainer = document.querySelector('.mouse-pos-list-image');
-      const btnContainer = document.querySelector('.mouse-pos-list-btn');
-      const spanContainer = document.querySelector('.mouse-pos-list-span');
-      const rows = document.querySelectorAll('.hover-row, .work-items li, .work-tiles li');
-      const items = document.querySelectorAll('.mouse-pos-list-image-inner');
+      const imageContainer = document.querySelector(".mouse-pos-list-image");
+      const btnContainer = document.querySelector(".mouse-pos-list-btn");
+      const spanContainer = document.querySelector(".mouse-pos-list-span");
+      const rows = document.querySelectorAll(
+        ".hover-row, .work-items li, .work-tiles li",
+      );
+      const items = document.querySelectorAll(".mouse-pos-list-image-inner");
 
       if (imageContainer && rows.length > 0) {
         let mouseX = 0;
@@ -300,57 +314,65 @@ export function usePortfolioEffects() {
             spanContainer.style.transform = `translate3d(${currentX.toFixed(1)}px, ${currentY.toFixed(1)}px, 0) translate(-50%, -50%)`;
           }
 
-          if (isHovering || Math.abs(mouseX - currentX) > 0.5 || Math.abs(mouseY - currentY) > 0.5) {
+          if (
+            isHovering ||
+            Math.abs(mouseX - currentX) > 0.5 ||
+            Math.abs(mouseY - currentY) > 0.5
+          ) {
             hoverRaf = requestAnimationFrame(renderFollower);
           } else {
             hoverRaf = null;
           }
         };
 
-        document.addEventListener('mousemove', onMouseMoveFollower);
+        document.addEventListener("mousemove", onMouseMoveFollower);
 
         rows.forEach((row) => {
           const onMouseEnterRow = () => {
-            const project = row.getAttribute('data-project');
-            const idx = row.getAttribute('data-index');
+            const project = row.getAttribute("data-project");
+            const idx = row.getAttribute("data-index");
             items.forEach((item) => {
-              const matchesProject = project && item.getAttribute('data-project') === project;
-              const matchesIndex = idx && item.getAttribute('data-index') === idx;
-              item.classList.toggle('visible', matchesProject || matchesIndex);
+              const matchesProject =
+                project && item.getAttribute("data-project") === project;
+              const matchesIndex =
+                idx && item.getAttribute("data-index") === idx;
+              item.classList.toggle("visible", matchesProject || matchesIndex);
             });
             isHovering = true;
-            imageContainer.classList.add('active');
-            if (btnContainer) btnContainer.classList.add('active');
-            if (spanContainer) spanContainer.classList.add('active');
+            imageContainer.classList.add("active");
+            if (btnContainer) btnContainer.classList.add("active");
+            if (spanContainer) spanContainer.classList.add("active");
             if (!hoverRaf) hoverRaf = requestAnimationFrame(renderFollower);
           };
 
           const onMouseLeaveRow = () => {
             isHovering = false;
-            imageContainer.classList.remove('active');
-            if (btnContainer) btnContainer.classList.remove('active');
-            if (spanContainer) spanContainer.classList.remove('active');
+            imageContainer.classList.remove("active");
+            if (btnContainer) btnContainer.classList.remove("active");
+            if (spanContainer) spanContainer.classList.remove("active");
           };
 
-          row.addEventListener('mouseenter', onMouseEnterRow);
-          row.addEventListener('mouseleave', onMouseLeaveRow);
+          row.addEventListener("mouseenter", onMouseEnterRow);
+          row.addEventListener("mouseleave", onMouseLeaveRow);
 
           cleanups.push(() => {
-            row.removeEventListener('mouseenter', onMouseEnterRow);
-            row.removeEventListener('mouseleave', onMouseLeaveRow);
+            row.removeEventListener("mouseenter", onMouseEnterRow);
+            row.removeEventListener("mouseleave", onMouseLeaveRow);
           });
         });
 
         cleanups.push(() => {
-          document.removeEventListener('mousemove', onMouseMoveFollower);
+          document.removeEventListener("mousemove", onMouseMoveFollower);
           if (hoverRaf) cancelAnimationFrame(hoverRaf);
         });
       }
     }
 
     // 6. Intro Parallax ("About Me" button)
-    const introSection = document.querySelector('.home-intro');
-    const introWrap = introSection ? introSection.querySelector('.btn-wrap-intro') : null;
+    const introSection = document.querySelector(".home-intro");
+    const introWrap = introSection
+      ? introSection.querySelector(".btn-wrap-intro")
+      : null;
     if (introSection && introWrap) {
       let ticking = false;
       const updateIntroParallax = () => {
@@ -374,25 +396,31 @@ export function usePortfolioEffects() {
           ticking = true;
         }
       };
-      window.addEventListener('scroll', onIntroScroll, { passive: true });
-      window.addEventListener('resize', updateIntroParallax);
+      window.addEventListener("scroll", onIntroScroll, { passive: true });
+      window.addEventListener("resize", updateIntroParallax);
       updateIntroParallax();
 
       cleanups.push(() => {
-        window.removeEventListener('scroll', onIntroScroll);
-        window.removeEventListener('resize', updateIntroParallax);
+        window.removeEventListener("scroll", onIntroScroll);
+        window.removeEventListener("resize", updateIntroParallax);
       });
     }
 
     // 7. Footer Overlap & Vertical Scroll Parallax
-    const footerWrap = document.querySelector('.footer-wrap');
-    const footerSpacer = document.querySelector('.footer-spacer');
-    const roundedWrap = document.querySelector('.footer-rounded-div .rounded-div-wrap');
-    const footerEl = footerWrap ? footerWrap.querySelector('.footer') : null;
-    const headingEl = footerWrap ? footerWrap.querySelector('.container.medium .row:nth-child(1) h2') : null;
-    const btnFixed = footerWrap ? footerWrap.querySelector('.btn-fixed') : null;
-    const footerRow = footerWrap ? footerWrap.querySelector('.container.medium .row:nth-child(2)') : null;
-    const arrowEl = footerWrap ? footerWrap.querySelector('.arrow') : null;
+    const footerWrap = document.querySelector(".footer-wrap");
+    const footerSpacer = document.querySelector(".footer-spacer");
+    const roundedWrap = document.querySelector(
+      ".footer-rounded-div .rounded-div-wrap",
+    );
+    const footerEl = footerWrap ? footerWrap.querySelector(".footer") : null;
+    const headingEl = footerWrap
+      ? footerWrap.querySelector(".container.medium .row:nth-child(1) h2")
+      : null;
+    const btnFixed = footerWrap ? footerWrap.querySelector(".btn-fixed") : null;
+    const footerRow = footerWrap
+      ? footerWrap.querySelector(".container.medium .row:nth-child(2)")
+      : null;
+    const arrowEl = footerWrap ? footerWrap.querySelector(".arrow") : null;
 
     if (footerWrap && footerSpacer) {
       let currentProgress = 0;
@@ -402,7 +430,7 @@ export function usePortfolioEffects() {
       const updateSpacer = () => {
         const winH = window.innerHeight;
         const footerH = footerEl ? footerEl.offsetHeight : 0;
-        footerSpacer.style.height = Math.max(winH * 0.9, footerH) + 'px';
+        footerSpacer.style.height = Math.max(winH * 0.9, footerH) + "px";
       };
 
       const calculateTarget = () => {
@@ -413,9 +441,9 @@ export function usePortfolioEffects() {
         targetProgress = Math.max(0, Math.min(1, scrolledIntoSpacer / spacerH));
 
         if (scrolledIntoSpacer > -40) {
-          footerWrap.classList.add('visible');
+          footerWrap.classList.add("visible");
         } else {
-          footerWrap.classList.remove('visible');
+          footerWrap.classList.remove("visible");
         }
 
         if (!footerRafId) {
@@ -435,7 +463,7 @@ export function usePortfolioEffects() {
 
         if (roundedWrap) {
           const curveHeight = (1 - p) * 8;
-          roundedWrap.style.height = Math.max(0, curveHeight).toFixed(2) + 'vh';
+          roundedWrap.style.height = Math.max(0, curveHeight).toFixed(2) + "vh";
         }
 
         if (footerEl) {
@@ -470,8 +498,8 @@ export function usePortfolioEffects() {
         }
       };
 
-      window.addEventListener('scroll', calculateTarget, { passive: true });
-      window.addEventListener('resize', () => {
+      window.addEventListener("scroll", calculateTarget, { passive: true });
+      window.addEventListener("resize", () => {
         updateSpacer();
         calculateTarget();
       });
@@ -480,7 +508,7 @@ export function usePortfolioEffects() {
       calculateTarget();
 
       cleanups.push(() => {
-        window.removeEventListener('scroll', calculateTarget);
+        window.removeEventListener("scroll", calculateTarget);
         if (footerRafId) cancelAnimationFrame(footerRafId);
       });
     }

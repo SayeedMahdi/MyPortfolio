@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="bg-wahswaad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A060A"/>
+      <stop offset="60%" stop-color="#360C14"/>
+      <stop offset="100%" stop-color="#58141F"/>
+    </linearGradient>
+    <radialGradient id="glow-wahswaad" cx="0.75" cy="0.25" r="0.65">
+      <stop offset="0%" stop-color="#FB923C" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FB923C" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-wahswaad" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="url(#bg-wahswaad)"/>
+  <rect width="1000" height="1000" fill="url(#dots-wahswaad)"/>
+  <rect width="1000" height="1000" fill="url(#glow-wahswaad)"/>
+
+  <!-- Warm Culinary Glow Circles -->
+  <g fill="none" stroke="#F97316" stroke-opacity="0.2" stroke-width="2">
+    <circle cx="500" cy="460" r="230"/>
+    <circle cx="500" cy="460" r="170"/>
+  </g>
+
+  <!-- Aromatic Steam Swirls -->
+  <g fill="none" stroke="#FDBA74" stroke-width="4" stroke-linecap="round" stroke-opacity="0.7">
+    <path d="M440 290 Q 420 230 440 180 T 420 120"/>
+    <path d="M500 270 Q 520 210 500 160 T 520 100"/>
+    <path d="M560 290 Q 580 230 560 180 T 580 120"/>
+  </g>
+
+  <!-- Luxury Restaurant Cloche Dome & Platter -->
+  <g transform="translate(500, 460)">
+    <!-- Cloche Handle -->
+    <ellipse cx="0" cy="-145" rx="22" ry="14" fill="#FBBF24"/>
+    <rect x="-8" y="-135" width="16" height="18" fill="#F59E0B" rx="4"/>
+    
+    <!-- Cloche Dome -->
+    <path d="M-220,0 C-220,-140 220,-140 220,0 Z" fill="#7F1D1D" fill-opacity="0.4" stroke="#FDBA74" stroke-width="5"/>
+    <!-- Dome Accent Curve -->
+    <path d="M-170,-20 C-170,-100 170,-100 170,-20" fill="none" stroke="#FCD34D" stroke-width="2" stroke-opacity="0.4"/>
+    
+    <!-- Serving Platter Base -->
+    <line x1="-260" y1="0" x2="260" y2="0" stroke="#FBBF24" stroke-width="8" stroke-linecap="round"/>
+    <path d="M-210,0 C-210,25 210,25 210,0" fill="#F59E0B" fill-opacity="0.4" stroke="#FBBF24" stroke-width="3"/>
+  </g>
+
+  <!-- Crossed Fork & Knife / Chef Artisanal Badge -->
+  <g transform="translate(500, 570)" stroke="#FED7AA" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <!-- Star Emblem -->
+    <circle cx="0" cy="40" r="34" fill="#431407" stroke="#F97316" stroke-width="3"/>
+    <path d="M0,24 L4,34 L15,36 L7,43 L9,54 L0,48 L-9,54 L-7,43 L-15,36 L-4,34 Z" fill="#FBBF24" stroke="none"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="70" y="110" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="7" fill="#FDBA74">ARTISANAL FOOD &amp; HOME CHEFS MARKETPLACE</text>
+  <text x="70" y="905" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" fill="#FFFFFF">Wah Swaad</text>
+</svg>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { useTransition } from '../context/TransitionContext';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { useTransition } from "../context/TransitionContext";
 
 export default function DrawerMenu({ onClose }) {
   const location = useLocation();
@@ -11,10 +11,11 @@ export default function DrawerMenu({ onClose }) {
     navigateTo(path, label);
   };
 
-  const isHome = location.pathname === '/' || location.pathname === '/index.html';
-  const isWork = location.pathname.includes('work');
-  const isAbout = location.pathname.includes('about');
-  const isContact = location.pathname.includes('contact');
+  const isHome =
+    location.pathname === "/" || location.pathname === "/index.html";
+  const isWork = location.pathname.includes("work");
+  const isAbout = location.pathname.includes("about");
+  const isContact = location.pathname.includes("contact");
 
   return (
     <>
@@ -30,12 +31,12 @@ export default function DrawerMenu({ onClose }) {
             <h5>Navigation</h5>
             <div className="stripe"></div>
             <ul className="links-wrap">
-              <li className={`btn btn-link ${isHome ? 'active' : ''}`}>
+              <li className={`btn btn-link ${isHome ? "active" : ""}`}>
                 <a
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNav('/', 'Home');
+                    handleNav("/", "Home");
                   }}
                   className="btn-click magnetic"
                 >
@@ -44,12 +45,12 @@ export default function DrawerMenu({ onClose }) {
                   </span>
                 </a>
               </li>
-              <li className={`btn btn-link ${isWork ? 'active' : ''}`}>
+              <li className={`btn btn-link ${isWork ? "active" : ""}`}>
                 <a
                   href="/work"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNav('/work', 'Work');
+                    handleNav("/work", "Work");
                   }}
                   className="btn-click magnetic"
                 >
@@ -58,12 +59,12 @@ export default function DrawerMenu({ onClose }) {
                   </span>
                 </a>
               </li>
-              <li className={`btn btn-link ${isAbout ? 'active' : ''}`}>
+              <li className={`btn btn-link ${isAbout ? "active" : ""}`}>
                 <a
                   href="/about"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNav('/about', 'About');
+                    handleNav("/about", "About");
                   }}
                   className="btn-click magnetic"
                 >
@@ -72,12 +73,12 @@ export default function DrawerMenu({ onClose }) {
                   </span>
                 </a>
               </li>
-              <li className={`btn btn-link ${isContact ? 'active' : ''}`}>
+              <li className={`btn btn-link ${isContact ? "active" : ""}`}>
                 <a
                   href="/contact"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNav('/contact', 'Contact');
+                    handleNav("/contact", "Contact");
                   }}
                   className="btn-click magnetic"
                 >
@@ -95,7 +96,7 @@ export default function DrawerMenu({ onClose }) {
               <ul>
                 <li className="btn btn-link btn-link-external">
                   <a
-                    href="https://www.linkedin.com/in/aadarshrai1801/"
+                    href="https://www.linkedin.com/in/sayeed-mahdi-mousavi/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-click magnetic"
@@ -107,7 +108,7 @@ export default function DrawerMenu({ onClose }) {
                 </li>
                 <li className="btn btn-link btn-link-external">
                   <a
-                    href="https://github.com/Aadarshrai1801"
+                    href="https://github.com/SayeedMahdi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-click magnetic"
@@ -119,7 +120,7 @@ export default function DrawerMenu({ onClose }) {
                 </li>
                 <li className="btn btn-link btn-link-external">
                   <a
-                    href="mailto:aadarshrai1801@gmail.com"
+                    href="mailto:sayeedmahdimousavi789@gmail.com"
                     className="btn-click magnetic"
                   >
                     <span className="btn-text">

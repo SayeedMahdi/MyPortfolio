@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="bg-arrival" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#081426"/>
+      <stop offset="60%" stop-color="#0F284E"/>
+      <stop offset="100%" stop-color="#1E3E72"/>
+    </linearGradient>
+    <radialGradient id="glow-arrival" cx="0.8" cy="0.25" r="0.65">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-arrival" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="url(#bg-arrival)"/>
+  <rect width="1000" height="1000" fill="url(#dots-arrival)"/>
+  <rect width="1000" height="1000" fill="url(#glow-arrival)"/>
+
+  <!-- Resettlement Path Coordinate Grid / Radar Rings -->
+  <g stroke="#38BDF8" stroke-opacity="0.15" stroke-width="1.5" fill="none">
+    <circle cx="700" cy="400" r="260"/>
+    <circle cx="700" cy="400" r="180"/>
+    <circle cx="700" cy="400" r="100"/>
+    <line x1="700" y1="120" x2="700" y2="680"/>
+    <line x1="420" y1="400" x2="980" y2="400"/>
+  </g>
+
+  <!-- Stylized Maple Leaf Silhouette (Canada Resettlement Link) -->
+  <g transform="translate(680, 260) scale(1.1)" fill="#EF4444" fill-opacity="0.85">
+    <path d="M0,-50 L12,-20 L28,-30 L22,-5 L45,-5 L26,14 L38,35 L12,24 L6,52 L-6,52 L-12,24 L-38,35 L-26,14 L-45,-5 L-22,-5 L-28,-30 L-12,-20 Z"/>
+  </g>
+
+  <!-- Flight / Journey Arcs -->
+  <path d="M120 680 C 260 480, 420 320, 680 260" fill="none" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M120 680 C 260 480, 420 320, 680 260" fill="none" stroke="#BAE6FD" stroke-width="3" stroke-linecap="round" stroke-dasharray="12,12"/>
+
+  <!-- Sponsorship Pathway / Bridge of Hope -->
+  <g fill="none" stroke="#7DD3FC" stroke-linecap="round">
+    <!-- Waypoint 1: Departure -->
+    <circle cx="120" cy="680" r="14" fill="#0284C7" stroke="#38BDF8" stroke-width="4"/>
+    <circle cx="120" cy="680" r="24" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="2"/>
+    
+    <!-- Waypoint 2: Midpoint Coordination & Legal Prep -->
+    <circle cx="380" cy="440" r="12" fill="#0284C7" stroke="#38BDF8" stroke-width="3"/>
+    
+    <!-- Waypoint 3: Arrival & Community Integration -->
+    <circle cx="680" cy="260" r="16" fill="#F87171" stroke="#EF4444" stroke-width="4"/>
+    <circle cx="680" cy="260" r="30" stroke="#EF4444" stroke-opacity="0.5" stroke-width="2"/>
+  </g>
+
+  <!-- Community Hands / Guardian Arch Structure -->
+  <g transform="translate(260, 520)" stroke="#67E8F9" stroke-width="3" fill="none">
+    <rect x="0" y="40" width="300" height="130" rx="16" fill="#0F172A" fill-opacity="0.6" stroke="#0284C7" stroke-width="2"/>
+    <line x1="30" y1="75" x2="270" y2="75" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+    <line x1="30" y1="105" x2="190" y2="105" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.6"/>
+    <line x1="30" y1="130" x2="230" y2="130" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="70" y="110" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="7" fill="#7DD3FC">REFUGEE SPONSORSHIP TO CANADA</text>
+  <text x="70" y="905" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" fill="#FFFFFF">Arrival Path</text>
+</svg>

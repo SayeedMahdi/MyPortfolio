@@ -1,6 +1,6 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { useTransition } from '../context/TransitionContext';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { useTransition } from "../context/TransitionContext";
 
 export default function Navbar({ onToggleMenu }) {
   const { navigateTo } = useTransition();
@@ -8,16 +8,21 @@ export default function Navbar({ onToggleMenu }) {
   const path = location.pathname.toLowerCase();
 
   // Home and Contact have dark headers, while Work and About have light headers
-  const isDark = path === '/' || path === '/index.html' || path.includes('contact');
+  const isDark =
+    path === "/" || path === "/index.html" || path.includes("contact");
 
-  const isWork = path.includes('work');
-  const isAbout = path.includes('about');
-  const isContact = path.includes('contact');
+  const isWork = path.includes("work");
+  const isAbout = path.includes("about");
+  const isContact = path.includes("contact");
 
   return (
     <>
       <div className="btn btn-hamburger" onClick={onToggleMenu}>
-        <div className="btn-click magnetic" data-strength="25" data-strength-text="15">
+        <div
+          className="btn-click magnetic"
+          data-strength="25"
+          data-strength-text="15"
+        >
           <div className="btn-fill"></div>
           <div className="btn-text">
             <div className="btn-bars"></div>
@@ -26,37 +31,39 @@ export default function Navbar({ onToggleMenu }) {
         </div>
       </div>
 
-      <div className={`nav-bar ${isDark ? 'theme-dark' : ''}`}>
+      <div className={`nav-bar ${isDark ? "theme-dark" : ""}`}>
         <div className="credits-top">
           <div className="btn btn-link btn-left-top">
             <a
               href="/"
               onClick={(e) => {
                 e.preventDefault();
-                navigateTo('/', 'Home');
+                navigateTo("/", "Home");
               }}
               className="btn-click magnetic"
-              data-strength="20"
-              data-strength-text="10"
+              data-strength="24"
+              data-strength-text="14"
             >
               <span className="btn-text">
-                <div className="credit"><span>©</span></div>
+                <div className="credit">
+                  <span>©</span>
+                </div>
                 <div className="cbd">
                   <span className="code-by">Code by </span>
-                  <span className="author">Aadarsh</span>
-                  <span className="author-last"> Rai</span>
+                  <span className="author">Sayeed Mahdi</span>
+                  <span className="author-last"> Mousavi</span>
                 </div>
               </span>
             </a>
           </div>
         </div>
         <ul className="links-wrap">
-          <li className={`btn btn-link ${isWork ? 'active' : ''}`}>
+          <li className={`btn btn-link ${isWork ? "active" : ""}`}>
             <a
               href="/work"
               onClick={(e) => {
                 e.preventDefault();
-                navigateTo('/work', 'Work');
+                navigateTo("/work", "Work");
               }}
               className="btn-click magnetic"
               data-strength="20"
@@ -67,12 +74,12 @@ export default function Navbar({ onToggleMenu }) {
               </span>
             </a>
           </li>
-          <li className={`btn btn-link ${isAbout ? 'active' : ''}`}>
+          <li className={`btn btn-link ${isAbout ? "active" : ""}`}>
             <a
               href="/about"
               onClick={(e) => {
                 e.preventDefault();
-                navigateTo('/about', 'About');
+                navigateTo("/about", "About");
               }}
               className="btn-click magnetic"
               data-strength="20"
@@ -83,12 +90,12 @@ export default function Navbar({ onToggleMenu }) {
               </span>
             </a>
           </li>
-          <li className={`btn btn-link ${isContact ? 'active' : ''}`}>
+          <li className={`btn btn-link ${isContact ? "active" : ""}`}>
             <a
               href="/contact"
               onClick={(e) => {
                 e.preventDefault();
-                navigateTo('/contact', 'Contact');
+                navigateTo("/contact", "Contact");
               }}
               className="btn-click magnetic"
               data-strength="20"
@@ -100,7 +107,11 @@ export default function Navbar({ onToggleMenu }) {
             </a>
           </li>
           <li className="btn btn-link btn-menu" onClick={onToggleMenu}>
-            <div className="btn-click magnetic" data-strength="20" data-strength-text="10">
+            <div
+              className="btn-click magnetic"
+              data-strength="20"
+              data-strength-text="10"
+            >
               <div className="btn-text">
                 <span className="btn-text-inner">Menu</span>
               </div>

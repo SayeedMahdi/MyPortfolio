@@ -57,19 +57,8 @@ export default function Work() {
                   <div className="btn-click magnetic" data-strength="25" data-strength-text="15">
                     <div className="btn-fill"></div>
                     <span className="btn-text">
-                      <span className="btn-text-inner change">All</span>
-                    </span>
-                  </div>
-                </div>
-                <div
-                  className={`btn btn-normal design-btn ${filter === 'design' ? 'active' : ''}`}
-                  onClick={() => setFilter('design')}
-                >
-                  <div className="btn-click magnetic" data-strength="25" data-strength-text="15">
-                    <div className="btn-fill"></div>
-                    <span className="btn-text">
                       <span className="btn-text-inner change">
-                        Design<div className="count-nr">2</div>
+                        All<div className="count-nr">{PROJECTS.length}</div>
                       </span>
                     </span>
                   </div>
@@ -82,7 +71,33 @@ export default function Work() {
                     <div className="btn-fill"></div>
                     <span className="btn-text">
                       <span className="btn-text-inner change">
-                        Development<div className="count-nr">4</div>
+                        Development<div className="count-nr">{PROJECTS.filter((p) => p.category.includes('development')).length}</div>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className={`btn btn-normal design-btn ${filter === 'design' ? 'active' : ''}`}
+                  onClick={() => setFilter('design')}
+                >
+                  <div className="btn-click magnetic" data-strength="25" data-strength-text="15">
+                    <div className="btn-fill"></div>
+                    <span className="btn-text">
+                      <span className="btn-text-inner change">
+                        Design<div className="count-nr">{PROJECTS.filter((p) => p.category.includes('design')).length}</div>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className={`btn btn-normal management-btn ${filter === 'management' ? 'active' : ''}`}
+                  onClick={() => setFilter('management')}
+                >
+                  <div className="btn-click magnetic" data-strength="25" data-strength-text="15">
+                    <div className="btn-fill"></div>
+                    <span className="btn-text">
+                      <span className="btn-text-inner change">
+                        Management<div className="count-nr">{PROJECTS.filter((p) => p.category.includes('management')).length}</div>
                       </span>
                     </span>
                   </div>
@@ -231,7 +246,7 @@ export default function Work() {
             <div className="grid-after-btn">
               <div className="btn btn-normal btn-dark">
                 <a
-                  href="https://github.com/Aadarshrai1801?tab=repositories"
+                  href="https://github.com/SayeedMahdi?tab=repositories"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-click magnetic"

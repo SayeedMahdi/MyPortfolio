@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="bg-learninbox" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B132B"/>
+      <stop offset="50%" stop-color="#1C274C"/>
+      <stop offset="100%" stop-color="#3B4980"/>
+    </linearGradient>
+    <radialGradient id="glow-learninbox" cx="0.8" cy="0.25" r="0.65">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-learninbox" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="url(#bg-learninbox)"/>
+  <rect width="1000" height="1000" fill="url(#dots-learninbox)"/>
+  <rect width="1000" height="1000" fill="url(#glow-learninbox)"/>
+
+  <!-- Connected Knowledge Mesh / Peer Learning Graph -->
+  <g stroke="#93C5FD" stroke-opacity="0.2" stroke-width="2">
+    <line x1="220" y1="360" x2="420" y2="280"/>
+    <line x1="420" y1="280" x2="680" y2="340"/>
+    <line x1="420" y1="280" x2="520" y2="520"/>
+    <line x1="220" y1="360" x2="320" y2="580"/>
+    <line x1="320" y1="580" x2="520" y2="520"/>
+    <line x1="520" y1="520" x2="740" y2="560"/>
+    <line x1="680" y1="340" x2="740" y2="560"/>
+    <line x1="680" y1="340" x2="840" y2="280"/>
+  </g>
+
+  <!-- Virtual Class / Card UI Frame -->
+  <g transform="translate(180, 260)">
+    <rect width="640" height="380" rx="24" fill="#0F172A" fill-opacity="0.6" stroke="#60A5FA" stroke-width="2" stroke-opacity="0.6"/>
+    <!-- Card Header / Video Dot -->
+    <circle cx="40" cy="40" r="7" fill="#EF4444"/>
+    <circle cx="65" cy="40" r="7" fill="#F59E0B"/>
+    <circle cx="90" cy="40" r="7" fill="#10B981"/>
+    <line x1="130" y1="40" x2="350" y2="40" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/>
+
+    <!-- Central Graduation Cap Motif -->
+    <g transform="translate(320, 190)">
+      <!-- Cap Diamond -->
+      <polygon points="0,-70 120,0 0,70 -120,0" fill="#2563EB" stroke="#93C5FD" stroke-width="4"/>
+      <!-- Cap Skull Under -->
+      <path d="M-65,38 L-65,85 C-65,115 65,115 65,85 L65,38" fill="none" stroke="#93C5FD" stroke-width="4"/>
+      <!-- Tassel -->
+      <path d="M0,0 L-95,45 L-95,95" fill="none" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="-95" cy="98" r="6" fill="#FBBF24"/>
+      <circle cx="0" cy="0" r="8" fill="#FBBF24"/>
+    </g>
+
+    <!-- Sub UI Controls / Waves -->
+    <rect x="50" y="300" width="160" height="36" rx="10" fill="#3B82F6" fill-opacity="0.25" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="75" y="324" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#BFDBFE">1-ON-1 SESSION</text>
+    <polyline points="440,318 460,305 480,325 500,298 520,320 540,308 560,328 580,312" fill="none" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Floating Star Badge -->
+  <g transform="translate(740, 240)">
+    <circle cx="0" cy="0" r="32" fill="#F59E0B" fill-opacity="0.2" stroke="#FBBF24" stroke-width="2"/>
+    <path d="M0,-16 L5,-5 L16,-3 L8,6 L10,16 L0,10 L-10,16 L-8,6 L-16,-3 L-5,-5 Z" fill="#FBBF24"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="70" y="110" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="7" fill="#93C5FD">GLOBAL EDTECH &amp; TUTORING MARKETPLACE</text>
+  <text x="70" y="905" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" fill="#FFFFFF">LearnInBox</text>
+</svg>

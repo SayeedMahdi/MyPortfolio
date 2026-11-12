@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="bg-apex" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080718"/>
+      <stop offset="60%" stop-color="#15123B"/>
+      <stop offset="100%" stop-color="#282061"/>
+    </linearGradient>
+    <radialGradient id="glow-apex" cx="0.8" cy="0.2" r="0.65">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-apex" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="url(#bg-apex)"/>
+  <rect width="1000" height="1000" fill="url(#dots-apex)"/>
+  <rect width="1000" height="1000" fill="url(#glow-apex)"/>
+
+  <!-- Academy Growth Circuit / Pathway -->
+  <g stroke="#C084FC" stroke-opacity="0.2" stroke-width="2" fill="none">
+    <circle cx="500" cy="450" r="230"/>
+    <circle cx="500" cy="450" r="160"/>
+    <line x1="270" y1="450" x2="730" y2="450"/>
+    <line x1="500" y1="220" x2="500" y2="680"/>
+  </g>
+
+  <!-- Code Brackets & Digital Skill Symbol (< / >) -->
+  <g stroke="#22D3EE" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left Bracket < -->
+    <polyline points="280,380 200,450 280,520"/>
+    <!-- Right Bracket > -->
+    <polyline points="720,380 800,450 720,520"/>
+    <!-- Slash / -->
+    <line x1="530" y1="360" x2="470" y2="540" stroke="#C084FC" stroke-width="6"/>
+  </g>
+
+  <!-- Central Academic Crest & Language Ribbons -->
+  <g transform="translate(500, 440)">
+    <!-- Central Shield / Badge -->
+    <polygon points="0,-120 90,-40 60,80 0,120 -60,80 -90,-40" fill="#1E1B4B" stroke="#A855F7" stroke-width="4"/>
+    
+    <!-- Letter A / Apex Peak -->
+    <path d="M0,-70 L-40,40 L-20,40 L-10,15 L10,15 L20,40 L40,40 Z" fill="#F8FAFC"/>
+    <polygon points="0,-35 -6,0 6,0" fill="#1E1B4B"/>
+    
+    <!-- Language Accent Dots -->
+    <circle cx="0" cy="80" r="6" fill="#22D3EE"/>
+    <circle cx="-25" cy="72" r="4" fill="#C084FC"/>
+    <circle cx="25" cy="72" r="4" fill="#C084FC"/>
+  </g>
+
+  <!-- Ascending Skill Level Bars -->
+  <g transform="translate(340, 640)" fill="#38BDF8" fill-opacity="0.3" stroke="#22D3EE" stroke-width="2">
+    <rect x="0" y="40" width="45" height="40" rx="6"/>
+    <rect x="70" y="25" width="45" height="55" rx="6" fill-opacity="0.5"/>
+    <rect x="140" y="10" width="45" height="70" rx="6" fill-opacity="0.7"/>
+    <rect x="210" y="-5" width="45" height="85" rx="6" fill-opacity="0.9" fill="#A855F7" stroke="#C084FC"/>
+    <rect x="280" y="-20" width="45" height="100" rx="6" fill="#F43F5E" stroke="#FB7185"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="70" y="110" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="7" fill="#67E8F9">FOREIGN LANGUAGE &amp; SKILLS ACADEMY</text>
+  <text x="70" y="905" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" fill="#FFFFFF">Apex Academy</text>
+</svg>

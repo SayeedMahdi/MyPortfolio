@@ -7,7 +7,7 @@ export default function About() {
         <div className="container medium">
           <div className="row">
             <div className="flex-col once-in">
-              <h1><span>Helping brands &amp; teams</span><span>thrive in the AI era</span></h1>
+              <h1><span>Helping brands &amp; teams</span><span>build better products</span></h1>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function About() {
                 </svg>
               </div>
               <p>
-                I help companies and engineering teams build tailor-made AI solutions and production-ready intelligent systems. With each project, I push technology to new horizons, always putting quality and performance first.
+                I help companies and teams turn ideas into scalable digital products through strong project leadership, modern full-stack development, and backend-focused engineering. With each project, I push technology to new horizons, always putting quality, performance, and delivery first.
               </p>
               <p>
                 <span style={{ opacity: 0.5, display: 'block', paddingTop: '0.5em' }}>
@@ -90,20 +90,20 @@ export default function About() {
             <div className="flex-col">
               <h5>01</h5>
               <div className="stripe"></div>
-              <h4>Machine Learning</h4>
-              <p>From predictive modeling and deep learning architectures to robust feature engineering and automated training pipelines tailored to real-world business data.</p>
+              <h4>Project Leadership</h4>
+              <p>Driving product planning, team coordination, sprint execution, and delivery strategy to keep projects moving efficiently from idea to launch.</p>
             </div>
             <div className="flex-col">
               <h5>02</h5>
               <div className="stripe"></div>
-              <h4>LLMs &amp; GenAI</h4>
-              <p>Building state-of-the-art GenAI applications, intelligent retrieval systems (RAG), autonomous multi-agent workflows, and fine-tuned domain-specific language models.</p>
+              <h4>Backend &amp; Full-Stack Development</h4>
+              <p>Designing scalable backend systems, APIs, database architecture, and full-stack product features with a strong focus on performance and maintainability.</p>
             </div>
             <div className="flex-col">
               <h5>03</h5>
               <div className="stripe"></div>
-              <h4>The full package</h4>
-              <p>End-to-end intelligent software from concept to implementation. Seamlessly integrating high-performance AI APIs (FastAPI/Flask) with modern web interfaces and scalable cloud infrastructure.</p>
+              <h4>Product Delivery</h4>
+              <p>Turning business requirements into reliable digital products through clean architecture, practical execution, and strong technical ownership.</p>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ export default function About() {
             <div className="flex-col">
               <div className="awwwards-badge"></div>
               <h2>Education &amp;<br />Background</h2>
-              <p>I am an AI and Machine Learning Engineer based in Dubai, UAE, dedicated to building production-ready machine learning pipelines, fine-tuned LLM workflows, and intelligent software systems.</p>
+              <p>I am Sayeed Mahdi Mousavi, a Project Manager and Full Stack Developer based in Herat, Afghanistan, with strong experience in backend development and delivering scalable digital products.</p>
               <div className="about-credentials">
                 <div className="credential-item">
                   <h5>Degree</h5>
@@ -144,14 +144,14 @@ export default function About() {
                 <div className="credential-item">
                   <h5>Core Competencies</h5>
                   <div className="credential-tags">
-                    <span>Python</span>
-                    <span>PyTorch</span>
-                    <span>TensorFlow</span>
-                    <span>LangChain</span>
-                    <span>FastAPI</span>
-                    <span>AWS</span>
-                    <span>Docker</span>
-                    <span>Linux</span>
+                    <span>Project Management</span>
+                    <span>Backend Development</span>
+                    <span>Full Stack</span>
+                    <span>API Design</span>
+                    <span>Database Systems</span>
+                    <span>Node.js</span>
+                    <span>React</span>
+                    <span>System Architecture</span>
                   </div>
                 </div>
               </div>

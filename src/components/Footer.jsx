@@ -1,5 +1,5 @@
-import React from 'react';
-import { useTransition } from '../context/TransitionContext';
+import React from "react";
+import { useTransition } from "../context/TransitionContext";
 
 export default function Footer() {
   const { navigateTo } = useTransition();
@@ -18,10 +18,25 @@ export default function Footer() {
             <div className="row">
               <div className="flex-col">
                 <div className="arrow">
-                  <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="14px"
+                    height="14px"
+                    viewBox="0 0 14 14"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <title>arrow-up-right</title>
-                    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                      <g transform="translate(-1019.000000, -279.000000)" stroke="#FFFFFF" strokeWidth="1.5">
+                    <g
+                      stroke="none"
+                      strokeWidth="1"
+                      fill="none"
+                      fillRule="evenodd"
+                    >
+                      <g
+                        transform="translate(-1019.000000, -279.000000)"
+                        stroke="#FFFFFF"
+                        strokeWidth="1.5"
+                      >
                         <g transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
                           <polyline points="2.76923077 0 12 0 12 9.23076923"></polyline>
                           <line x1="12" y1="0" x2="0" y2="12"></line>
@@ -32,7 +47,7 @@ export default function Footer() {
                 </div>
                 <h2>
                   <span>
-                    <div className="profile-picture"></div> Let's work{' '}
+                    <div className="profile-picture"></div> Let's work{" "}
                   </span>
                   <span>together</span>
                 </h2>
@@ -47,7 +62,7 @@ export default function Footer() {
                       href="/contact"
                       onClick={(e) => {
                         e.preventDefault();
-                        navigateTo('/contact', 'Contact');
+                        navigateTo("/contact", "Contact");
                       }}
                       className="btn-click magnetic"
                       data-strength="100"
@@ -65,18 +80,32 @@ export default function Footer() {
             <div className="row">
               <div className="flex-col">
                 <div className="btn btn-normal">
-                  <a href="mailto:aadarshrai1801@gmail.com" className="btn-click magnetic" data-strength="25" data-strength-text="15">
+                  <a
+                    href="mailto:sayeedmahdimousavi789@gmail.com"
+                    className="btn-click magnetic"
+                    data-strength="25"
+                    data-strength-text="15"
+                  >
                     <div className="btn-fill"></div>
                     <span className="btn-text">
-                      <span className="btn-text-inner change">aadarshrai1801@gmail.com</span>
+                      <span className="btn-text-inner change">
+                        sayeedmahdimousavi789@gmail.com
+                      </span>
                     </span>
                   </a>
                 </div>
                 <div className="btn btn-normal">
-                  <a href="tel:+918434501384" className="btn-click magnetic" data-strength="25" data-strength-text="15">
+                  <a
+                    href="tel:+93745450318"
+                    className="btn-click magnetic"
+                    data-strength="25"
+                    data-strength-text="15"
+                  >
                     <div className="btn-fill"></div>
                     <span className="btn-text">
-                      <span className="btn-text-inner change">+91 8434501384</span>
+                      <span className="btn-text-inner change">
+                        +93 745 450 318
+                      </span>
                     </span>
                   </a>
                 </div>
@@ -92,7 +121,9 @@ export default function Footer() {
                 </div>
                 <div className="time">
                   <h5>Local time</h5>
-                  <p><span id="timeSpan">--:-- GST</span></p>
+                  <p>
+                    <span id="timeSpan">--:-- Kabul</span>
+                  </p>
                 </div>
               </div>
               <div className="flex-col">
@@ -101,7 +132,7 @@ export default function Footer() {
                   <ul>
                     <li className="btn btn-link btn-link-external">
                       <a
-                        href="https://www.linkedin.com/in/aadarshrai1801/"
+                        href="https://www.linkedin.com/in/sayeed-mahdi-mousavi-7b4184200/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-click magnetic"
@@ -115,7 +146,7 @@ export default function Footer() {
                     </li>
                     <li className="btn btn-link btn-link-external">
                       <a
-                        href="https://github.com/Aadarshrai1801"
+                        href="https://github.com/SayeedMahdi"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-click magnetic"
@@ -129,7 +160,7 @@ export default function Footer() {
                     </li>
                     <li className="btn btn-link btn-link-external">
                       <a
-                        href="mailto:aadarshrai1801@gmail.com"
+                        href="mailto:sayeedmahdimousavi789@gmail.com"
                         className="btn-click magnetic"
                         data-strength="20"
                         data-strength-text="10"

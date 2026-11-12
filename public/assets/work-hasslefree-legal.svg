@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="bg-legal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070C18"/>
+      <stop offset="60%" stop-color="#0E172E"/>
+      <stop offset="100%" stop-color="#1B284B"/>
+    </linearGradient>
+    <radialGradient id="glow-legal" cx="0.75" cy="0.25" r="0.65">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-legal" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#FFFFFF" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="url(#bg-legal)"/>
+  <rect width="1000" height="1000" fill="url(#dots-legal)"/>
+  <rect width="1000" height="1000" fill="url(#glow-legal)"/>
+
+  <!-- Legal Document Card Backdrop -->
+  <g transform="translate(180, 240)">
+    <rect width="640" height="420" rx="20" fill="#0F172A" fill-opacity="0.6" stroke="#334155" stroke-width="2"/>
+    <!-- Document lines -->
+    <line x1="70" y1="80" x2="260" y2="80" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+    <line x1="70" y1="120" x2="380" y2="120" stroke="#64748B" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/>
+    <line x1="70" y1="150" x2="330" y2="150" stroke="#64748B" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/>
+    <line x1="70" y1="180" x2="360" y2="180" stroke="#64748B" stroke-width="3" stroke-linecap="round" stroke-opacity="0.5"/>
+    
+    <!-- Verified Shield Stamp -->
+    <g transform="translate(490, 80)">
+      <path d="M0,0 C35,-15 50,-10 65,0 C65,45 45,75 0,95 C-45,75 -65,45 -65,0 C-50,-10 -35,-15 0,0 Z" fill="#1E293B" stroke="#F59E0B" stroke-width="3"/>
+      <polyline points="-18,40 -4,54 22,24" fill="none" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Precision Scales of Justice Vector -->
+  <g transform="translate(500, 380)" stroke="#FCD34D" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Center Post -->
+    <line x1="0" y1="-80" x2="0" y2="190" stroke-width="6"/>
+    <!-- Center Finial & Base -->
+    <circle cx="0" cy="-90" r="10" fill="#FCD34D"/>
+    <path d="M-50,190 L50,190" stroke-width="8"/>
+    <path d="M-70,205 L70,205" stroke-width="6"/>
+    
+    <!-- Balance Beam -->
+    <line x1="-190" y1="-50" x2="190" y2="-50" stroke-width="6"/>
+    <circle cx="0" cy="-50" r="12" fill="#0B132B" stroke="#FCD34D" stroke-width="4"/>
+
+    <!-- Left Scale Pan -->
+    <g transform="translate(-190, -50)">
+      <line x1="0" y1="0" x2="-60" y2="110" stroke-width="2.5" stroke-opacity="0.7"/>
+      <line x1="0" y1="0" x2="60" y2="110" stroke-width="2.5" stroke-opacity="0.7"/>
+      <path d="M-75,110 Q 0,165 75,110 Z" fill="#FCD34D" fill-opacity="0.15" stroke-width="3.5"/>
+    </g>
+
+    <!-- Right Scale Pan -->
+    <g transform="translate(190, -50)">
+      <line x1="0" y1="0" x2="-60" y2="110" stroke-width="2.5" stroke-opacity="0.7"/>
+      <line x1="0" y1="0" x2="60" y2="110" stroke-width="2.5" stroke-opacity="0.7"/>
+      <path d="M-75,110 Q 0,165 75,110 Z" fill="#FCD34D" fill-opacity="0.15" stroke-width="3.5"/>
+    </g>
+  </g>
+
+  <!-- Typography -->
+  <text x="70" y="110" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="7" fill="#FCD34D">LEGALTECH &amp; ADVISORY INTERMEDIARY</text>
+  <text x="70" y="905" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" fill="#FFFFFF">HassleFree Legal</text>
+</svg>
