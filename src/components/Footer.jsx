@@ -172,7 +172,7 @@ export default function Footer() {
                     </li>
                     <li className="btn btn-link btn-link-external">
                       <a
-                        href="/assets/Sayeed%20Mahdi%20Mousavi%20CV.pdf"
+                        href="/assets/SayeedMahdiMousaviCV.pdf"
                         download="Sayeed Mahdi Mousavi CV.pdf"
                         target="_blank"
                         rel="noopener noreferrer"

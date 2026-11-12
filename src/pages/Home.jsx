@@ -176,10 +176,6 @@ export default function Home() {
               <div className="flex-col">
                 <div className="text-wrap reveal">
                   <p>
-                    I’m a Project Manager and Full Stack Developer with strong
-                    backend expertise, focused on delivering scalable web
-                    platforms, resilient APIs, and product-driven solutions from
-                    planning through deployment.
                   </p>
                 </div>
                 <div className="btn-wrap-intro">
